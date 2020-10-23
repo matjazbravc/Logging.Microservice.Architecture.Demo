@@ -1,0 +1,67 @@
+version: '3.6'
+
+services:
+    # Elasticsearch Docker Images: https://www.docker.elastic.co/
+    elasticsearch:
+        container_name: elasticsearch
+        image: docker.elastic.co/elasticsearch/elasticsearch:7.9.2
+        restart: on-failure
+        hostname: elasticsearch
+        networks:
+            - common_network
+
+    kibana:
+        container_name: kibana
+        image: docker.elastic.co/kibana/kibana:7.9.2
+        restart: on-failure
+        hostname: kibana
+        networks:
+            - common_network
+  
+    servicea.openapi:
+        container_name: servicea.openapi
+        image: servicea.openapi:latest
+        restart: on-failure
+        hostname: servicea.openapi
+        build:
+            context: .
+            dockerfile: src/ServiceA.OpenApi/Dockerfile
+        networks:
+            - common_network
+
+    serviceb.openapi:
+        container_name: serviceb.openapi
+        image: serviceb.openapi:latest
+        restart: on-failure
+        hostname: serviceb.openapi
+        build:
+            context: .
+            dockerfile: src/ServiceB.OpenApi/Dockerfile
+        networks:
+            - common_network
+
+    servicec.openapi:
+        container_name: servicec.openapi
+        image: servicec.openapi:latest
+        restart: on-failure
+        hostname: servicec.openapi
+        build:
+            context: .
+            dockerfile: src/ServiceC.OpenApi/Dockerfile
+        networks:
+            - common_network
+
+    services.gateway:
+        container_name: services.gateway
+        image: services.gateway:latest
+        restart: on-failure
+        hostname: services.gateway
+        build:
+            context: .
+            dockerfile: src/Services.Gateway/Dockerfile
+        networks:
+            - common_network
+
+networks:
+    common_network:
+        driver: bridge
