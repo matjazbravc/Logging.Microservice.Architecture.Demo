@@ -512,12 +512,12 @@ You'll probably find the information level logs for a little bit too verbose. By
 When you think about all the convenience and functionality you get by combining Docker, ElasticSearch, Kibana, ASP.NET Core and Serilog, there's really no excuse to not incorporate correlation logging into MSA anymore. Do you agree? Enjoy!
 
 ## Prerequisites
-- [Visual Studio](https://www.visualstudio.com/vs/community) 2019 16.4.5 or greater
-- [.NET Core SDK 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+- [Visual Studio](https://www.visualstudio.com/vs/community) 2019 16.8.4 or greater
+- [.NET SDK 5.0.202](https://dotnet.microsoft.com/download/dotnet/5.0)
 - [Docker](https://www.docker.com/resources/what-container)  
 
 ## Tags & Technologies
-- [ASP.NET Core 3.1](https://docs.microsoft.com/en-us/aspnet/?view=aspnetcore-3.1#pivot=core)
+- [.NET 5.0.5](https://github.com/dotnet/core/blob/main/release-notes/5.0/5.0.5/5.0.5.md)
 - [Docker](https://www.docker.com/resources/what-container)  
 - [Elasticsearch](https://www.elastic.co/elasticsearch/)
 - [Kibana](https://www.elastic.co/kibana)
